@@ -129,6 +129,7 @@ liff
   .then((profile) => {
     const name = profile.displayName;
     document.getElementById("userId").append(name)
+    console.log(name);
   })
   .catch((err) => {
     console.log("error", err);
