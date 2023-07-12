@@ -74,6 +74,10 @@
 
     async function getUserProfile() {
       const profile = await liff.getProfile();
+      document.getElementById("pictureUrl").src = profile.pictureUrl;
+      document.getElementById("userId").textContent = profile.userId;
+      document.getElementById("statusMessage").append(profile.statusMessage);
+      document.getElementById("displayName").append(profile.displayName);
 
 
     }
@@ -96,32 +100,33 @@
       }}
       
 
-     //async function main() {
-       //await liff.init({ liffId: "2000073508-M5w6lqJj" })
-    liff.init({ liffId: '2000073508-M5w6lqJj' })
-  .then(async () => {
-    if (liff.isLoggedIn()) {
-      const profile = await liff.getProfile();
+     async function main() {
+       await liff.init({ liffId: "2000073508-M5w6lqJj" })
+    
+  //   liff.init({ liffId: '2000073508-M5w6lqJj' })
+  // .then(async () => {
+  //   if (liff.isLoggedIn()) {
+  //     const profile = await liff.getProfile();
 
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").textContent = profile.userId;
-        document.getElementById("statusMessage").append(profile.statusMessage);
-        document.getElementById("displayName").append(profile.displayName);
+  //       document.getElementById("pictureUrl").src = profile.pictureUrl;
+  //       document.getElementById("userId").textContent = profile.userId;
+  //       document.getElementById("statusMessage").append(profile.statusMessage);
+  //       document.getElementById("displayName").append(profile.displayName);
       
-      console.log(profile.pictureUrl);
-      console.log(profile.displayName);
-      console.log(profile.userId);
-      console.log(profile.statusMessage);
+  //     console.log(profile.pictureUrl);
+  //     console.log(profile.displayName);
+  //     console.log(profile.userId);
+  //     console.log(profile.statusMessage);
       
-    }else {
-      liff.login();
-    }
-  })
-  .catch((err) => {
-    console.log(err.code, err.message);
-  })
-      // getEnvironment()
-      // getUserProfile()
+  //   }else {
+  //     liff.login();
+  //   }
+  // })
+  // .catch((err) => {
+  //   console.log(err.code, err.message);
+  // })
+       getEnvironment()
+       getUserProfile()
       
     //   //picture, userID, name, statusMessage
     //   // getContext()
