@@ -99,45 +99,30 @@
       }}
       
 
-    // async function main() {
-    //   await liff.init({ liffId: "2000073508-M5w6lqJj" })
-    //   getEnvironment()
-    //   getUserProfile()
+     //async function main() {
+       //await liff.init({ liffId: "2000073508-M5w6lqJj" })
+    liff.init({ liffId: '2000073508-M5w6lqJj' })
+  .then(async () => {
+    if (liff.isLoggedIn()) {
+      console.log(liff.getProfile());
+    }else {
+      liff.login();
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+      // getEnvironment()
+      // getUserProfile()
+      
     //   //picture, userID, name, statusMessage
     //   // getContext()
     //   // getFriendship()
     //   // createUniversalLink()
-    // }
+    //
     // main()
 
-    // Using a Promise object
-liff
-  .init({
-    liffId: "2000073508-M5w6lqJj", // Use own liffId
-  })
-  .then(() => {
-      
-        alert("Hello")
-  })
-  .catch((err) => {
-    // Error happens during initialization
-    console.log(err.code, err.message);
-  });
 
-liff
-  .getProfile()
-  .then((profile) => {
-    const name = profile.displayName;
-    document.getElementById("userId").append(name)
-    console.log(name);
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
-    
-
-// // Using a callback
-// liff.init({ liffId: "123456-abcedfg" }, successCallback, errorCallback);
   </script>
 </body>
 </html>
