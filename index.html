@@ -103,10 +103,11 @@
       
 
      // async function main() {
-        await liff.init({ liffId: "2000073508-M5w6lqJj" })
+     //   await liff.init({ liffId: "2000073508-M5w6lqJj" })
     
-
-    liff.getProfile().then(profile => {
+  liff.init({ liffId: "1234567890-XXXXXXXXX" }, () => {
+    if (liff.isLoggedIn()) {
+     liff.getProfile().then(profile => {
   const userProfile = profile.userId;
   const displayName = profile.displayName;
   const statusMessage = profile.statusMessage;
@@ -115,6 +116,12 @@
 }).catch(
   err => console.error(err.code, err.message)
 );
+    } else {
+      liff.login();
+    }
+  }, err => console.error(err.code, error.message));
+
+    
        // getEnvironment()
        // getUserProfile()
        
