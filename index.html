@@ -104,7 +104,9 @@
     liff.init({ liffId: '2000073508-M5w6lqJj' })
   .then(async () => {
     if (liff.isLoggedIn()) {
-      console.log(liff.getProfile());
+      const profile = liff.getProfile();
+      
+      console.log(profile.displayName);
     }else {
       liff.login();
     }
