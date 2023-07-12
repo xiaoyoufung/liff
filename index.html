@@ -77,7 +77,8 @@
       document.getElementById("pictureUrl").src = profile.pictureUrl;
       document.getElementById("userId").textContent = profile.userId;
       document.getElementById("statusMessage").append(profile.statusMessage);
-      document.getElementById("displayName").append(profile.displayName);
+      document.getElementById("displayName").append(profile.displayName);  
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email);
 
 
     }
