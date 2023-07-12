@@ -103,13 +103,15 @@
     if (liff.isLoggedIn()) {
       const profile = await liff.getProfile();
 
-        await document.getElementById("pictureUrl").src = profile.pictureUrl;
-        await document.getElementById("userID").textContent = (profile.userId);
-        await document.getElementById("statusMessage").append(profile.statusMessage);
-        await document.getElementById("displayName").append(profile.displayName);
+        document.getElementById("pictureUrl").src = profile.pictureUrl;
+        document.getElementById("userID").textContent = (profile.userId);
+        document.getElementById("statusMessage").append(profile.statusMessage);
+        document.getElementById("displayName").append(profile.displayName);
       
       console.log(profile.pictureUrl);
       console.log(profile.displayName);
+      console.log(profile.userId);
+      console.log(profile.statusMessage);
     }else {
       liff.login();
     }
